@@ -54,11 +54,11 @@ module.exports = function(sequelize, DataTypes) {
             }
         });
         
-        Event.hasMany(models.RSVP, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
+        // Event.hasMany(models.RSVP, {
+        //     foreignKey: {
+        //         allowNull: false
+        //     }
+        // });
     };
     return Event;
 };

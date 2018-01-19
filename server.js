@@ -21,17 +21,17 @@ app.use(bodyParser.json());
 
 //app.set("view engine", "handlebars");
 
-var CommentRoute = require("./controllers/CommentController.js");
-app.use("/", CommentRoute);
+// var CommentRoute = require("./controllers/CommentController.js");
+// app.use("/", CommentRoute);
 
-var EventRoute = require("./controllers/EventController.js");
-app.use("/", EventRoute);
+var EventController = require("./controllers/EventController.js");
+app.use("/", EventController);
 
-var RSVPRoute = require("./controllers/RSVPController.js");
-app.use("/", RSVPRoute);
+// var RSVPRoute = require("./controllers/RSVPController.js");
+// app.use("/", RSVPRoute);
 
-var UserRoute = require("./controllers/UserRoute.js");
-app.use("/", UserRoute);
+var UserController = require("./controllers/UserController.js");
+app.use("/", UserController);
 
 
 db.sequelize.sync({}).then(function() {
