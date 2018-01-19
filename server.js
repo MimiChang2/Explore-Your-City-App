@@ -21,14 +21,14 @@ app.use(bodyParser.json());
 
 //app.set("view engine", "handlebars");
 
-// var CommentRoute = require("./controllers/CommentController.js");
-// app.use("/", CommentRoute);
+var CommentController = require("./controllers/CommentController.js");
+app.use("/", CommentController);
 
 var EventController = require("./controllers/EventController.js");
 app.use("/", EventController);
 
-// var RSVPRoute = require("./controllers/RSVPController.js");
-// app.use("/", RSVPRoute);
+var RSVPController = require("./controllers/RSVPController.js");
+app.use("/", RSVPController);
 
 var UserController = require("./controllers/UserController.js");
 app.use("/", UserController);

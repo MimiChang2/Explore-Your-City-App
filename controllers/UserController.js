@@ -10,9 +10,10 @@ var router = express.Router();
 //get route to see all users
 
 router.get("/api/users", function(req, res) {
-    db.User.findAll({ include: [db.Event, db.Comment, db.RSVP] }).then(function(allUsers) {
-        res.json(allUsers);
-    });
+    res.send("hello");
+    // db.User.findAll({ include: [db.Event, db.Comment, db.RSVP] }).then(function(allUsers) {
+    //     res.json(allUsers);
+    // });
 });
 
 

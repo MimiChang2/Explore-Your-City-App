@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING(50),
             allowNull: false,
             validate: {
-                len: [10, 40]
+                len: [5, 40]
             }
         },
         location: {
@@ -23,14 +23,14 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING(40),
             allowNull: false,
             validate: {
-                len: [10, 40]
+                len: [4, 40]
             }
         },
         description: {
             type: DataTypes.STRING(40),
             allowNull: false,
             validate: {
-                len: [10, 40]
+                len: [5, 40]
             }
         },
     });
@@ -54,11 +54,11 @@ module.exports = function(sequelize, DataTypes) {
             }
         });
         
-        // Event.hasMany(models.RSVP, {
-        //     foreignKey: {
-        //         allowNull: false
-        //     }
-        // });
+        Event.hasMany(models.RSVP, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
     };
     return Event;
 };
