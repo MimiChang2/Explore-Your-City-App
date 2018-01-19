@@ -21,7 +21,7 @@ db.sequelize.sync({}).then(function() {
             db.Comment.create({
                 UserId: newUser.get('id'),
                 EventId: newEvent.get('id'),
-                textbody: "get excited everyone! bring some food and drinks!"
+                textbody: "bring some food and drinks!"
             });
             
             //make RSVP here
@@ -101,12 +101,12 @@ db.sequelize.sync({}).then(function() {
             eventName: "Bob's 40th Birthday Bash!",
             location: "San Francisco, CA",
             date: "April 17, 2018",
-            description: "Bob is getting old! Come celebrate his birthday with him!"
+            description: "Bob is getting old! Come celebrate his birthday!"
         }).then(newEvent => {
             db.Comment.create({
                 UserId: newUser.get('id'),
                 EventId: newEvent.get('id'),
-                textbody: "everyone better come to this or bob will cry"
+                textbody: "everyone better come or bob will cry"
             });
             
             //make RSVP here
@@ -134,7 +134,7 @@ db.sequelize.sync({}).then(function() {
             db.Comment.create({
                 UserId: newUser.get('id'),
                 EventId: newEvent.get('id'),
-                textbody: "sun and fun and bring your hats and swimsuits!"
+                textbody: "sun and fun! bring your hats and swimsuits!"
             });
             
             //make RSVP here

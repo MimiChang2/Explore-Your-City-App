@@ -30,7 +30,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING(40),
             allowNull: false,
             validate: {
-                len: [5, 40]
+                len: [5, 100]
             }
         },
     });
