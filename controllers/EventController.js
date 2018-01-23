@@ -18,7 +18,7 @@ router.get("/api/events", function(req, res) {
 //"get" route for one specific event by ID
 router.get("/api/events/:id", function(req, res) {
     db.Event.findOne({
-        id: req.params.id
+        where: {id: req.params.id}
     }).then(function(data) {
         res.json(data);
     });

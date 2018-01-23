@@ -21,8 +21,8 @@ router.get("/api/users", function(req, res) {
 
 //"get" route for one specific user by ID
 router.get("/api/users/:id", function(req, res) {
-    db.Users.findOne({
-        id: req.params.id
+    db.User.findOne({
+        where: { id: req.params.id}
     }).then(function(data) {
         res.json(data);
     });
@@ -31,7 +31,7 @@ router.get("/api/users/:id", function(req, res) {
 // delete route for user
 router.delete("/api/users/:id", function(req, res) {
     db.Users.destroy({
-        id: req.params.id
+        where: {id: req.params.id}
     }).then(function(data) {
         res.json(data);
     });

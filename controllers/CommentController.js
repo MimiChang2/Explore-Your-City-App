@@ -18,7 +18,7 @@ router.get("/api/comments", function(req,res) {
 //NOTE: it returns 1st comment regardless of the ID typed in
 router.get("/api/events/:id/comments", function(req, res){
     db.Event.findOne({ include: [db.Comment],
-        id: req.params.id
+        where: {id: req.params.id}
     }).then(function(data){
         res.json(data.Comments);
     });
