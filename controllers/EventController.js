@@ -32,7 +32,8 @@ router.post("/api/events", function(req, res) {
         eventname: req.body.eventname,
         location: req.body.location,
         date: req.body.date,
-        description: req.body.description
+        description: req.body.description,
+        UserId: req.body.UserId
     }).then(function(newEvent) {
         res.json(newEvent);
     });
@@ -41,21 +42,21 @@ router.post("/api/events", function(req, res) {
 //delete route to delete their posting. For someone who has posted an item only. 
 router.delete("/api/events/:id", function(req, res) {
     db.Event.destroy({
-        id: req.params.id
+        where: {id: req.params.id}
     }).then(function(data) {
         res.json(data);
     });
 });
 
 //PUT route for updating postings. For someone who has posted an item only. 
-router.put("/api/events", function(req, res) {
+router.put("/api/events/:id", function(req, res) {
     db.Event.update({
-        eventname: req.body.eventname,
+        eventname: req.body.eventname, 
         location: req.body.location,
         date: req.body.date,
         description: req.body.description
     }, {
-        where: { id: req.body.id }
+        where: { id: req.params.id }
     }).then(function(data) {
         res.json(data);
     });

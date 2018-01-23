@@ -15,6 +15,7 @@ router.get("/api/comments", function(req,res) {
 });
 
 //"get" route for comments on one specific event by ID
+//NOTE: it returns 1st comment regardless of the ID typed in
 router.get("/api/events/:id/comments", function(req, res){
     db.Event.findOne({ include: [db.Comment],
         id: req.params.id
@@ -27,7 +28,9 @@ router.get("/api/events/:id/comments", function(req, res){
 router.post("/api/comments", function(req, res){
     console.log(req.body);
     db.Comment.create({
-        textbody: req.body.textbody
+        textbody: req.body.textbody,
+        UserId: req.body.UserId,
+        EventId: req.body.EventId
     }).then(function(newComment){
         res.json(newComment);
     });
@@ -36,18 +39,18 @@ router.post("/api/comments", function(req, res){
 //delete route to delete a comment
 router.delete("/api/comments/:id", function(req, res){
     db.Comment.destroy({
-        id: req.params.id
+        where: {id: req.params.id}
     }).then(function(data){
         res.json(data);
     });
 });
 
 //updating a comment
-router.put("/api/comments", function(req, res){
+router.put("/api/comments/:id", function(req, res){
     db.Comment.update({
         textbody: req.body.textbody
     }, {
-        where: {id: req.body.id}
+        where: {id: req.params.id}
     }).then(function(data){
         res.json(data);
     });
