@@ -1,19 +1,23 @@
 //import models -require models folder
 var db = require("../models");
 
+//finish creating users , force true in server to drop database (node server.js), 
+//run seeds file again (node seeds.js in the db folder)
+
 db.sequelize.sync({}).then(function() {
     console.log("Synchronizing Schema");
     
     db.User.create({
-        userName: "KristenSnowman",
+        // userName: "KristenSnowman",
         email: "KristenSnowman@gmail.com",
-        password: "happysocks"
+        firebaseId: "YnBrUkvqlxMOYcenSIR7ImM9xIk2"
+        // password: "happysocks"
     }).then(newUser => {
         console.log(newUser.get('id'));
 
         db.Event.create({
             UserId: newUser.get('id'),
-            eventName: "Super Bowl Watch Party",
+            eventname: "Super Bowl Watch Party",
             location: "Minneapolis, MN",
             date: "Feb 4, 2018",
             description: "watch the super bowl and eat!"
@@ -34,15 +38,16 @@ db.sequelize.sync({}).then(function() {
     
     //make next user here
      db.User.create({
-        userName: "JustinPenguin",
+        // userName: "JustinPenguin",
         email: "JustinPenguin@gmail.com",
-        password: "owlsarecute"
+        firebaseId: "pns7ut200BfqEagubppD1XwHgDR2"
+        // password: "owlsarecute"
     }).then(newUser => {
         console.log(newUser.get('id'));
 
         db.Event.create({
             UserId: newUser.get('id'),
-            eventName: "Coding Bootcamp Graduation Party",
+            eventname: "Coding Bootcamp Graduation Party",
             location: "Charlotte, NC",
             date: "Feb 2, 2018",
             description: "celebrate being done with coding bootcamp!"
@@ -62,15 +67,16 @@ db.sequelize.sync({}).then(function() {
     });
     
      db.User.create({
-        userName: "JessicaRabbit",
+        // userName: "JessicaRabbit",
         email: "JessicaRabbit@gmail.com",
-        password: "bunnycarrots"
+        firebaseId: "Pol4DLuEzGevWPJy2mH1amrO2qk1"
+        // password: "bunnycarrots"
     }).then(newUser => {
         console.log(newUser.get('id'));
 
         db.Event.create({
             UserId: newUser.get('id'),
-            eventName: "Jessica's Bridal Shower",
+            eventname: "Jessica's Bridal Shower",
             location: "New York, NY",
             date: "March 10, 2018",
             description: "come celebrate Jessica getting married!"
@@ -90,15 +96,16 @@ db.sequelize.sync({}).then(function() {
     });
     
      db.User.create({
-        userName: "BobTheOwl",
+        // userName: "BobTheOwl",
         email: "BobTheOwl@gmail.com",
-        password: "whyisanowlnamedbob"
+        firebaseId: "04Tf4m2GfqgGybjTTT8tUJdcYRx1"
+        // password: "whyisanowlnamedbob"
     }).then(newUser => {
         console.log(newUser.get('id'));
 
         db.Event.create({
             UserId: newUser.get('id'),
-            eventName: "Bob's 40th Birthday Bash!",
+            eventname: "Bob's 40th Birthday Bash!",
             location: "San Francisco, CA",
             date: "April 17, 2018",
             description: "Bob is getting old! Come celebrate his birthday!"
@@ -118,15 +125,16 @@ db.sequelize.sync({}).then(function() {
     });
     
      db.User.create({
-        userName: "OliviaOwl",
+        // userName: "OliviaOwl",
         email: "OliviaOwl@gmail.com",
-        password: "anotherowl"
+        firebaseId: "HXevCd6s3ISO3JslNsnvxaWnEUo2"
+        // password: "anotherowl"
     }).then(newUser => {
         console.log(newUser.get('id'));
 
         db.Event.create({
             UserId: newUser.get('id'),
-            eventName: "Beach Bash with Olivia!",
+            eventname: "Beach Bash with Olivia!",
             location: "Miami, FL",
             date: "May 24, 2018",
             description: "ever been to the beach with an owl?"

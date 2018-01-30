@@ -3,13 +3,13 @@
 module.exports = function(sequelize, DataTypes) {
 
     var User = sequelize.define("User", {
-        username: {
-            type: DataTypes.STRING(30),
-            allowNull: false,
-            validate: {
-                len: [5, 100]
-            }
-        },
+        // username: {
+        //     type: DataTypes.STRING(30),
+        //     allowNull: false,
+        //     validate: {
+        //         len: [5, 100]
+        //     }
+        // },
         email: {
             type: DataTypes.STRING(40),
             allowNull: false,
@@ -17,13 +17,11 @@ module.exports = function(sequelize, DataTypes) {
                 len: [5, 300]
             }
         },
-        password: {
-            type: DataTypes.STRING(30),
-            allowNull: false,
-            validate: {
-                len: [5, 300]
-            }
-        },
+        firebaseId: {
+            type: DataTypes.STRING(100),
+            allowNull: false
+        }
+       
     });
 
     //associate user with events, RSVP, and comments. 

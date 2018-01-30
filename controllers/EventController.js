@@ -6,6 +6,7 @@ var app = express();
 var router = express.Router();
 app.use(router);
 
+
 //"get" route for all current events...
 router.get("/api/events", function(req, res) {
     db.Event.findAll({ include: [db.User, db.Comment] })

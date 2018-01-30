@@ -1,0 +1,75 @@
+.has-bg {
+    background:url(http://sites.ieee.org/charlotte/files/2015/03/Charlotte-Uptown-1140x400.jpg);
+    height: 400px;
+    position: relative;
+    left: 4em;
+    bottom: 2.2em;
+    border-bottom: 0px solid #121228;
+    border-radius: 10px;
+}
+.sidetext:hover {
+    color: white;
+    background-color: #989898;
+}
+.sidetext {
+    color: white;
+}
+input, textarea {
+    position: relative;
+    top: .1em;
+}
+.textbackground {
+    width: 81em;
+    height: 60%;
+    position: relative;
+    left: 3em;
+    top: 5em;
+    background-color: #121228;
+    padding: .5em;
+    opacity: .8;
+}
+.charlottetext, .exploretext {
+    font-size: 5em;
+    line-height: 1.2em;
+    opacity: 1;
+    color: white;
+}
+.charlottetext {
+    position: relative;
+    left: 2em;
+}
+
+.searchsubmit {
+    position: relative; 
+    background-color: black;
+    left: 50%;
+    bottom: 4em;
+    z-index: 3;
+}
+.card{
+    width: 100%;
+}
+
+
+
+.sidenav{
+    background-color: #121228;
+    position: fixed;
+    display: block;
+    height: 110%;
+    width: 10em;
+    z-index: 4;
+
+}
+
+.beautycontent {
+    background-color: white;
+    width: 98%;
+    height: 6em;
+    position: relative;
+    bottom: 10.8em;
+    left: 6em;
+    opacity: .6;
+    border: 10px solid #434351;
+    border-bottom: none;
+}

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello Bulma!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+
+  <!-- JQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Firebase Import -->
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+  
+   <!-- CSS Link -->
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="/assets/css/comments.css">
+    
+    <!-- Bulma Import -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    
+    <!-- Font Import -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+
+<body>
+  
+  
+    <!-- Sidenav -->
+      <div class="sidenav">
+          <p class="title sidetext"></p>
+
+            
+           <p> <a href="/" class="sidetext">Home</a></p>
+           <p> <a class="sidetext" id="register">Register</a></p>
+           <p> <a class="sidetext"id="signin">Sign In</a></p>
+           <p> <a href="/events" class="sidetext is-invisible" id="addeventbutton">Add Event</a></p>
+           <p> <a class="sidetext is-invisible" id="signout">Sign Out</a></p>
+
+      </div>
+      
+      
+      <!-- Modal One for Registration -->
+          <div class="modal modalone">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Modal title</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <p>Email:</p>
+        <p>
+                <b-field label="Email">
+                    <input
+                        type="email"
+                        v-model="email"
+                        placeholder="Your email"
+                        id="emailcreate"
+                        required>
+                    </input>
+                </b-field>
+        </p>
+        
+                <p>Username:</p>
+        <p>
+                <b-field label="Username">
+                    <input
+                        type="username"
+                        v-model="username"
+                        placeholder="Username"
+                        id="usernamecreate"
+                        required>
+                    </input>
+                </b-field>
+        </p>
+        
+                <p>Password:</p>
+        <p>
+        <b-field label="Password">
+                    <input
+                        id="passwordcreate"
+                        type="password"
+                        v-model="password"
+                        placeholder="Password"
+                        required>
+                    </input>
+                </b-field>
+        </p>
+
+      
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button registersubmit">Submit</button>
+        <button class="button" id="cancel">Cancel</button>
+      </footer>
+      </div>
+    </div>
+    
+    <!-- Modal Two for Sign In -->
+        <div class="modal modaltwo">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Modal title</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <p>Email:</p>
+        <p>
+                <b-field label="Email">
+                    <input
+                        type="email"
+                        v-model="email"
+                        placeholder="Your email"
+                        id="emailsignin"
+                        required>
+                    </input>
+                </b-field>
+        </p>
+        
+                <p>Username:</p>
+        <p>
+                <b-field label="Username">
+                    <input
+                        type="username"
+                        v-model="username"
+                        placeholder="Username"
+                        id="usernamesignin"
+                        required>
+                    </input>
+                </b-field>
+        </p>
+        
+                <p>Password:</p>
+        <p>
+        <b-field label="Password">
+                    <input
+                        id="passwordsignin"
+                        type="password"
+                        v-model="password"
+                        placeholder="Password"
+                        required>
+                    </input>
+                </b-field>
+        </p>
+
+      
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success loginsubmit">Submit</button>
+        <button class="button" id="cancel2">Cancel</button>
+      </footer>
+      </div>
+    </div>
+      
+    <!-- Main Section -->
+    <section class="section">  
+        <div class="container">
+            <div class="tile is-ancestor has-bg">
+              <div class="tile centertile">
+                    
+                    <div class="textbackground">
+                            <p class="exploretext">Explore</p>
+                            <p class="charlottetext">Charlotte</p>
+                    </div>
+    
+              </div>
+      
+              <div class="tile ">
+              <p class="title is-12">
+             
+              </p>
+              </div>
+      
+            </div> 
+    
+    
+            <a class="button is-black is-rounded searchsubmit">Comments</a>
+    
+
+    
+            <div class="beautycontent"></div>
+    
+    
+        </div>
+    </section>
+    
+    
+    <div class="container">
+        <div class="tile content">
+
+      
+            <div class="tile is-vertical is-12">
+                <div class="tile">
+                  <div class="tile is-parent is-vertical searchedcontent">
+                      
+                      <p>Comment</p>
+                        <textarea class="textarea commentinput" placeholder="Event Description"></textarea>
+
+                      <p>
+                        <a class="button is-success is-rounded addcomment">Add Comment</a>
+                      </p>
+                      
+                    
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+  
+  
+  
+  
+
+  <script src="/assets/scripts/firebase.js"></script>
+  <script src="/assets/scripts/api.js"></script>
+  <script src="/assets/scripts/comments.js"></script>
+  <script src="/assets/scripts/index.js"></script>
+</body>
+
+</html>

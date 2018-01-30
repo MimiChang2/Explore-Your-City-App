@@ -14,4 +14,13 @@ router.get("/api/rsvp", function(req,res) {
     });
 });
 
+router.post("/api/rsvp", function(req, res){
+    db.RSVP.create({
+        UserId: req.body.UserId,
+        EventId: req.body.EventId
+    }).then(function(newRSVP){
+        res.json(newRSVP);
+    });
+});
+
 module.exports= router;

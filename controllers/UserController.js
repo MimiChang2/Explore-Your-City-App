@@ -15,6 +15,20 @@ router.get("/api/users", function(req, res) {
     });
 });
 
+router.get("/api/user", function(req, res) {
+    // db query to get userId from database if it already exist
+    // or add user if user doesn't exist
+    db.User.findOrCreate({
+        where: { firebaseId: req.query.userId },
+        defaults:{
+            email: req.query.email,
+        }
+    }).then(function(responseArr){
+        // when done, store MySQL id in session storage
+        //***this needs to return sequelize id and not firebase!****
+        res.json(responseArr[0].dataValues.id);
+    });
+});
     // db.User.findAll({ include: [db.Event, db.Comment, db.RSVP] }).then(function(allUsers) {
     //     res.json(allUsers);
     // });
