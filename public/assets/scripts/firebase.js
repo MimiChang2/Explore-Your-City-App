@@ -28,18 +28,6 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
             console.log("UserId: " + response);
             sessionStorage.setItem("UserId", response)
         });
-        
-        $.ajax({
-            url: "/api/events",
-            method: "GET",
-            data: {
-                eventUserId: Event.UserId
-            }
-        }).done(function(response) {
-
-            console.log("This Event User Id: " + JSON.stringify(response[0]));
-            //sessionStorage.setItem("UserId", response)
-        });
 
 
 

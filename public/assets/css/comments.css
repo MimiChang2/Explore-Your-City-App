@@ -14,6 +14,13 @@
 .sidetext {
     color: white;
 }
+
+#rsvpbutton{
+    position: absolute;
+    bottom: 125px;
+    left: 100px;
+}
+
 input, textarea {
     position: relative;
     top: .1em;
