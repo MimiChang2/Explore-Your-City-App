@@ -7,6 +7,8 @@ var nodeadmin = require("nodeadmin");
 var path = require("path");
 var db = require("./models");
 
+var connection = require("./config/connection.js")
+
 var PORT = process.env.PORT || 8080;
 
 var app = express();
