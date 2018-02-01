@@ -53,7 +53,7 @@ $(".loginsubmit").on("click", function() {
 
     const promise = auth.signInWithEmailAndPassword(email, password);
     promise.catch(e => console.log(e.message));
-    location.reload();
+    //location.reload();
 
 
 });

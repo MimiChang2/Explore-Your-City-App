@@ -26,7 +26,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         }).done(function(response) {
 
             console.log("UserId: " + response);
-            sessionStorage.setItem("UserId", response)
+            sessionStorage.setItem("UserId", response);
         });
 
 
